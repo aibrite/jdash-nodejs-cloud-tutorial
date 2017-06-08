@@ -22,9 +22,9 @@ app.get('/auth/jwt', function (req, res, next) {
         data: {
             user: enduser /* current user of request */
         }
-    }, 'TODO: REPLACE WITH SECRET', {
+    }, 'REPLACE WITH YOUR SECRET', {
             algorithm: 'HS256',
-            subject: 'TODO: REPLACE WITH APIKEY',
+            subject: 'REPLACE WITH YOUR API KEY',
             expiresIn: "2h" /* optional but recommended */
         }, (err, token) => {
             if (err) {
@@ -38,5 +38,5 @@ app.get('/auth/jwt', function (req, res, next) {
 app.use(express.static(__dirname));
 
 app.listen(3002, function () {
-
+    console.log('JDash Demo App launched.')
 })
